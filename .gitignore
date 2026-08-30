@@ -54,3 +54,6 @@ appimage-build
 # direnv
 .direnv/
 android/app/.cxx/
+
+# Current changelog
+changelog.txt
