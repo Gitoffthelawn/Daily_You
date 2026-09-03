@@ -44,8 +44,7 @@ Future<bool> importFromDiaro(
 
     final xmlFile = await tempZipFolder.list().firstWhere(
           (f) => basename(f.path).endsWith('DiaroBackup.xml'),
-          orElse: () =>
-              throw Exception('DiaroBackup.xml not found in archive'),
+          orElse: () => throw Exception('DiaroBackup.xml not found in archive'),
         );
 
     final xmlString = utf8.decode(
@@ -66,8 +65,7 @@ Future<bool> importFromDiaro(
       if (r.getElement('type')?.innerText != 'photo') continue;
       final entryUid = r.getElement('entry_uid')?.innerText ?? "";
       final filename = r.getElement('filename')?.innerText ?? "";
-      final position =
-          int.tryParse(r.getElement('position')?.innerText ?? "");
+      final position = int.tryParse(r.getElement('position')?.innerText ?? "");
 
       if (entryUid.isEmpty || filename.isEmpty || position == null) continue;
 

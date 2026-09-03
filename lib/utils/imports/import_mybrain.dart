@@ -32,14 +32,12 @@ Future<bool> importFromMyBrain(Function(String) updateStatus) async {
     var processedEntries = 0;
 
     for (var entry in diary) {
-      final created = DateTime.fromMillisecondsSinceEpoch(
-              entry['createdDate'],
-              isUtc: true)
-          .toLocal();
-      final updated = DateTime.fromMillisecondsSinceEpoch(
-              entry['updatedDate'],
-              isUtc: true)
-          .toLocal();
+      final created =
+          DateTime.fromMillisecondsSinceEpoch(entry['createdDate'], isUtc: true)
+              .toLocal();
+      final updated =
+          DateTime.fromMillisecondsSinceEpoch(entry['updatedDate'], isUtc: true)
+              .toLocal();
 
       int? mood;
       if (entry['mood'] != null) {

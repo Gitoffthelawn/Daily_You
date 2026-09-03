@@ -262,57 +262,57 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   }) {
     return SafeArea(
       child: Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(28, 16, 16, 10),
-          child: Text(l10n.appTitle, style: theme.textTheme.headlineSmall),
-        ),
-        _buildNavItem(
-          context,
-          theme,
-          0,
-          Icons.home_rounded,
-          l10n.pageHomeTitle,
-          onTap: closeDrawer
-              ? () {
-                  Navigator.of(context).pop();
-                  _switchPage(0);
-                }
-              : null,
-        ),
-        _buildNavItem(
-          context,
-          theme,
-          1,
-          Icons.photo_library_rounded,
-          l10n.pageGalleryTitle,
-          onTap: closeDrawer
-              ? () {
-                  Navigator.of(context).pop();
-                  _switchPage(1);
-                }
-              : null,
-        ),
-        _buildNavItem(
-          context,
-          theme,
-          2,
-          Icons.auto_graph_rounded,
-          l10n.pageStatisticsTitle,
-          onTap: closeDrawer
-              ? () {
-                  Navigator.of(context).pop();
-                  _switchPage(2);
-                }
-              : null,
-        ),
-        const Spacer(),
-        const Divider(indent: 16, endIndent: 16),
-        _buildSettingsItem(context, theme, l10n, closeDrawer: closeDrawer),
-        const SizedBox(height: 8),
-      ],
-    ),
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(28, 16, 16, 10),
+            child: Text(l10n.appTitle, style: theme.textTheme.headlineSmall),
+          ),
+          _buildNavItem(
+            context,
+            theme,
+            0,
+            Icons.home_rounded,
+            l10n.pageHomeTitle,
+            onTap: closeDrawer
+                ? () {
+                    Navigator.of(context).pop();
+                    _switchPage(0);
+                  }
+                : null,
+          ),
+          _buildNavItem(
+            context,
+            theme,
+            1,
+            Icons.photo_library_rounded,
+            l10n.pageGalleryTitle,
+            onTap: closeDrawer
+                ? () {
+                    Navigator.of(context).pop();
+                    _switchPage(1);
+                  }
+                : null,
+          ),
+          _buildNavItem(
+            context,
+            theme,
+            2,
+            Icons.auto_graph_rounded,
+            l10n.pageStatisticsTitle,
+            onTap: closeDrawer
+                ? () {
+                    Navigator.of(context).pop();
+                    _switchPage(2);
+                  }
+                : null,
+          ),
+          const Spacer(),
+          const Divider(indent: 16, endIndent: 16),
+          _buildSettingsItem(context, theme, l10n, closeDrawer: closeDrawer),
+          const SizedBox(height: 8),
+        ],
+      ),
     );
   }
 

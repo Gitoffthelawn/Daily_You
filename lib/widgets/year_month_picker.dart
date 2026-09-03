@@ -14,8 +14,8 @@ Future<DateTime?> showYearMonthPicker(
   if (isJalali) {
     return _showJalaliPicker(context, initialDate: initialDate, locale: locale);
   } else {
-    return _showGregorianPicker(context, initialDate: initialDate, now: now,
-        locale: locale);
+    return _showGregorianPicker(context,
+        initialDate: initialDate, now: now, locale: locale);
   }
 }
 
@@ -145,9 +145,7 @@ Future<DateTime?> _showJalaliPicker(
   final nowJ = Jalali.now();
   final firstDateJ = Jalali.fromDateTime(DateTime(2000, 1, 1));
 
-  final initJ = initialDate != null
-      ? Jalali.fromDateTime(initialDate)
-      : nowJ;
+  final initJ = initialDate != null ? Jalali.fromDateTime(initialDate) : nowJ;
 
   int selectedYear = initJ.year;
   int selectedMonth = initJ.month;
@@ -155,8 +153,8 @@ Future<DateTime?> _showJalaliPicker(
   final years = List.generate(
       nowJ.year - firstDateJ.year + 1, (i) => firstDateJ.year + i);
 
-  final months = List.generate(
-      12, (i) => TimeManager.jalaliMonthName(i + 1, locale));
+  final months =
+      List.generate(12, (i) => TimeManager.jalaliMonthName(i + 1, locale));
 
   return showDialog<DateTime>(
     context: context,
@@ -246,8 +244,8 @@ Future<DateTime?> _showJalaliPicker(
             ),
             TextButton(
               onPressed: () {
-                Navigator.pop(
-                    context, Jalali(selectedYear, selectedMonth, 1).toDateTime());
+                Navigator.pop(context,
+                    Jalali(selectedYear, selectedMonth, 1).toDateTime());
               },
               child: Text(MaterialLocalizations.of(context).okButtonLabel),
             ),

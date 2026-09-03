@@ -5,7 +5,8 @@ sealed class StatsSubject {
 
   String toConfigString();
 
-  static StatsSubject fromConfigString(String? configString, List<Tag> allTags) {
+  static StatsSubject fromConfigString(
+      String? configString, List<Tag> allTags) {
     if (configString == null || configString == 'mood') {
       return const MoodSubject();
     }

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
@@ -6,7 +5,8 @@ class ResponsiveLayout extends StatelessWidget {
   final Widget tabletScaffold;
   final Widget desktopScaffold;
 
-  const ResponsiveLayout({super.key, 
+  const ResponsiveLayout({
+    super.key,
     required this.mobileScaffold,
     required this.desktopScaffold,
     required this.tabletScaffold,

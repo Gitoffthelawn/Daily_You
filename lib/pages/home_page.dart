@@ -131,8 +131,8 @@ class _HomePageState extends State<HomePage>
     final isJalali = TimeManager.isJalaliCalendar(context);
     final refYear = TimeManager.calendarYearOf(referenceDate, isJalali);
 
-    final hasEntries = EntriesProvider.instance.entries
-        .any((e) => TimeManager.isOnThisDayMatch(e.timeCreate, referenceDate, isJalali));
+    final hasEntries = EntriesProvider.instance.entries.any((e) =>
+        TimeManager.isOnThisDayMatch(e.timeCreate, referenceDate, isJalali));
     if (!hasEntries || !mounted) return;
 
     await Navigator.of(context).push(MaterialPageRoute(
@@ -237,7 +237,8 @@ class _HomePageState extends State<HomePage>
                               .reversed
                               .toList(),
                           labelBuilder: (e) =>
-                              TimeManager.localizedTimeFormat(locale).format(e.timeCreate),
+                              TimeManager.localizedTimeFormat(locale)
+                                  .format(e.timeCreate),
                         ),
                       ));
                     } else {
@@ -310,8 +311,7 @@ class _HomePageState extends State<HomePage>
                 icon: Icons.schedule_rounded,
                 label: AppLocalizations.of(context)!.actionToday,
                 onTap: () async => await _addNewEntryForToday(),
-                secondaryIcon:
-                    todayEntry != null ? Icons.edit_rounded : null,
+                secondaryIcon: todayEntry != null ? Icons.edit_rounded : null,
                 secondaryOnTap: todayEntry != null
                     ? () async => await _editEntry(todayEntry, todayImages)
                     : null),

@@ -7,7 +7,8 @@ Future<void> finishImport(Function(String) updateStatus,
   await EntriesProvider.instance.load();
   await EntryImagesProvider.instance.load();
   if (syncImages && ImageStorage.instance.usingExternalLocation()) {
-    await ImageStorage.instance.syncImageFolder(true, updateStatus: updateStatus);
+    await ImageStorage.instance
+        .syncImageFolder(true, updateStatus: updateStatus);
   }
 }
 

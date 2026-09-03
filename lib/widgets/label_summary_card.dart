@@ -48,8 +48,8 @@ class LabelSummaryCard extends StatelessWidget {
               Opacity(
                 opacity: _hasData ? 1.0 : 0.3,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   child: Row(
                     children: [
                       Expanded(

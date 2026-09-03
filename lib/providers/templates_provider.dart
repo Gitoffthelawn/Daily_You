@@ -32,8 +32,7 @@ class TemplatesProvider with ChangeNotifier {
   }
 
   Future<void> remove(Template template) async {
-    await TagsProvider.instance
-        .removeAllTemplateTagsForTemplate(template.id!);
+    await TagsProvider.instance.removeAllTemplateTagsForTemplate(template.id!);
     await TemplateDao.remove(template.id!);
     templates.removeWhere((x) => x.id == template.id);
     await AppDatabase.instance.updateExternalDatabase();

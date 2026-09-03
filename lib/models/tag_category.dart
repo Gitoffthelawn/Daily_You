@@ -69,8 +69,7 @@ class TagCategory {
         id: json[TagCategoryFields.id] as int?,
         name: json[TagCategoryFields.name] as String,
         icon: json[TagCategoryFields.icon] as String?,
-        iconType:
-            TagIconType.fromInt(json[TagCategoryFields.iconType] as int?),
+        iconType: TagIconType.fromInt(json[TagCategoryFields.iconType] as int?),
         color: json[TagCategoryFields.color] as int?,
         sortOrder: (json[TagCategoryFields.sortOrder] as int?) ?? 0,
         timeCreate:

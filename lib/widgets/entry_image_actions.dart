@@ -10,7 +10,8 @@ import 'package:image/image.dart' as img;
 import 'package:path/path.dart' show extension;
 
 class EntryImageActions {
-  static Future<void> takePhoto(ValueChanged<List<String>> onChangedImage) async {
+  static Future<void> takePhoto(
+      ValueChanged<List<String>> onChangedImage) async {
     final picker = ImagePicker();
     final quality = ConfigProvider.instance.get(ConfigKey.imageQualityLevel);
     final pickedFile = await picker.pickImage(source: ImageSource.camera);
