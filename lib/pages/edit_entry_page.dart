@@ -25,8 +25,8 @@ import 'package:flutter/material.dart';
 import 'package:daily_you/l10n/generated/app_localizations.dart';
 import 'package:daily_you/models/entry.dart';
 import 'package:daily_you/widgets/entry_image_actions.dart';
-import 'package:daily_you/widgets/entry_text_edit.dart';
 import 'package:daily_you/widgets/entry_mood_picker.dart';
+import 'package:daily_you/widgets/entry_text_edit.dart';
 
 class AddEditEntryPage extends StatefulWidget {
   final Entry? entry;
@@ -47,6 +47,8 @@ class AddEditEntryPage extends StatefulWidget {
 
 class _AddEditEntryPageState extends State<AddEditEntryPage>
     with WidgetsBindingObserver {
+  static const double _pageWidth = 800;
+
   late Entry _entry;
   int id = -1;
   String _lastText = "";
@@ -242,38 +244,48 @@ class _AddEditEntryPageState extends State<AddEditEntryPage>
                   actions: [_deleteButton(), _saveButton()]),
               body: EditorActionBarOverlay(
                 keyboardInset: keyboardInset,
-                body: CustomScrollView(
-                  slivers: [
-                    SliverToBoxAdapter(
-                      child: Align(
-                        alignment: Alignment.topCenter,
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 800),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                if (_currentImages.isNotEmpty)
-                                  EntryImageEditableList(
-                                      images: _currentImages,
-                                      onImagesChanged: (images) async {
-                                        _currentImages = images;
-                                        await _saveEntry();
-                                      }),
-                                StatefulBuilder(
-                                  builder: (context, setLocalState) =>
-                                      _buildMetadataCard(
-                                          context, theme, setLocalState),
-                                ),
-                              ],
+                body: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final sidePadding =
+                        ((constraints.maxWidth - _pageWidth) / 2)
+                            .clamp(0.0, double.infinity);
+                    final capPadding =
+                        EdgeInsets.symmetric(horizontal: sidePadding);
+                    return CustomScrollView(
+                      slivers: [
+                        SliverPadding(
+                          padding: capPadding,
+                          sliver: SliverToBoxAdapter(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  if (_currentImages.isNotEmpty)
+                                    EntryImageEditableList(
+                                        images: _currentImages,
+                                        onImagesChanged: (images) async {
+                                          _currentImages = images;
+                                          await _saveEntry();
+                                        }),
+                                  StatefulBuilder(
+                                    builder: (context, setLocalState) =>
+                                        _buildMetadataCard(
+                                            context, theme, setLocalState),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    _buildTextEditorSliver(context),
-                  ],
+                        SliverPadding(
+                          padding: capPadding,
+                          sliver: _buildTextEditorSliver(context),
+                        ),
+                      ],
+                    );
+                  },
                 ),
                 actionBar: EditorActionBar(
                   controller: _textEditingController,
@@ -438,38 +450,25 @@ class _AddEditEntryPageState extends State<AddEditEntryPage>
             EditorKeyboardSessionScope.maybeOf(context)?.resume();
             _focusNode.requestFocus();
           },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Flexible(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 800),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Expanded(
-                          child: StatefulBuilder(
-                            builder: (context, setState) => EntryTextEditor(
-                              text: text,
-                              focusNode: _focusNode,
-                              textEditingController: _textEditingController,
-                              undoHistoryController: _undoController,
-                              onExpand: _openFullScreenEditor,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                            height:
-                                16 + EditorActionBar.reservedHeight(context)),
-                      ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: StatefulBuilder(
+                    builder: (context, setState) => EntryTextEditor(
+                      text: text,
+                      focusNode: _focusNode,
+                      textEditingController: _textEditingController,
+                      undoHistoryController: _undoController,
+                      onExpand: _openFullScreenEditor,
                     ),
                   ),
                 ),
-              ),
-            ],
+                SizedBox(height: 16 + EditorActionBar.reservedHeight(context)),
+              ],
+            ),
           ),
         ),
       ),
