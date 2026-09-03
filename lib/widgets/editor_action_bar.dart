@@ -237,8 +237,10 @@ class _EditorActionBarState extends State<EditorActionBar> {
           builder: (context, constraints) {
             final toggleReserved =
                 showToggle ? metrics.toggleSize + DockMetrics.toggleGap : 0.0;
+            final mirroredReserved = isWide ? toggleReserved : 0.0;
             final maxPillWidth = (constraints.maxWidth -
                     toggleReserved -
+                    mirroredReserved -
                     metrics.contentInset * 2)
                 .clamp(0.0, constraints.maxWidth);
             final pillAlignment = showToggle && !isWide
