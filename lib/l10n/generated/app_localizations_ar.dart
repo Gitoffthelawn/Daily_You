@@ -482,7 +482,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get iconGroupHealth => 'الصحة';
 
   @override
-  String get iconGroupWorkFinance => 'Work & Finance';
+  String get iconGroupWorkFinance => 'العمل';
 
   @override
   String get iconGroupHabitsGoals => 'Habits & Goals';
@@ -494,37 +494,37 @@ class AppLocalizationsAr extends AppLocalizations {
   String get iconGroupFoodDrink => 'Food & Drink';
 
   @override
-  String get iconGroupHome => 'Home';
+  String get iconGroupHome => 'الرئيسية';
 
   @override
-  String get iconGroupTravel => 'Travel';
+  String get iconGroupTravel => 'السفر';
 
   @override
-  String get iconGroupSymbols => 'Symbols';
+  String get iconGroupSymbols => 'رموز';
 
   @override
-  String get tagCategoryLabel => 'Category';
+  String get tagCategoryLabel => 'فئة';
 
   @override
-  String get tagLabel => 'Tag';
+  String get tagLabel => 'علامة';
 
   @override
-  String get tagCategoryUncategorized => 'Uncategorized';
+  String get tagCategoryUncategorized => 'غير مصنف';
 
   @override
-  String get newCategoryTitle => 'New Category';
+  String get newCategoryTitle => 'فئة جديدة';
 
   @override
-  String get shareButtonLabel => 'Share';
+  String get shareButtonLabel => 'مشاركة';
 
   @override
-  String get importErrorDescription => 'Failed to import file!';
+  String get importErrorDescription => 'تعذّر استيراد الملف!';
 
   @override
-  String get exportErrorDescription => 'Failed to export file!';
+  String get exportErrorDescription => 'تعذّر تصدير الملف!';
 
   @override
-  String get deleteTitle => 'Delete';
+  String get deleteTitle => 'حذف';
 
   @override
   String deleteTagMessage(num count, Object name) {
@@ -552,62 +552,62 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String deleteTemplateMessage(Object name) {
-    return 'Delete \"$name\"?';
+    return 'حذف \"$name\"؟';
   }
 
   @override
-  String get filterTagsTitle => 'Filter';
+  String get filterTagsTitle => 'تصفية';
 
   @override
-  String get tagFilterModeAny => 'Any Tag';
+  String get tagFilterModeAny => 'اي علامة';
 
   @override
-  String get tagFilterModeAll => 'All Tags';
+  String get tagFilterModeAll => 'كل العلامات';
 
   @override
-  String get clearAllFilters => 'Clear All';
+  String get clearAllFilters => 'مسح الكل';
 
   @override
-  String get noTagsFilterLabel => 'No Tags';
+  String get noTagsFilterLabel => 'بدون علامات';
 
   @override
-  String get addTagsTitle => 'Add Tags';
+  String get addTagsTitle => 'إضافة علامات';
 
   @override
-  String get addTagsSearchHint => 'Search tags…';
+  String get addTagsSearchHint => 'البحث عن علامات…';
 
   @override
-  String get tagPickerSortManualLabel => 'Manual order';
+  String get tagPickerSortManualLabel => 'ترتيب يدوي';
 
   @override
-  String get tagPickerSortUsageLabel => 'Sort by usage';
+  String get tagPickerSortUsageLabel => 'الترتيب حسب الاستخدام';
 
   @override
-  String get tagFavoriteName => 'Favorite';
+  String get tagFavoriteName => 'المفضلة';
 
   @override
-  String get tagEnergyName => 'Energy';
+  String get tagEnergyName => 'الطاقة';
 
   @override
-  String get tagCategoryActivitiesName => 'Activities';
+  String get tagCategoryActivitiesName => 'الأنشطة';
 
   @override
-  String get tagExerciseName => 'Exercise';
+  String get tagExerciseName => 'تمارين';
 
   @override
-  String get tagSocializingName => 'Socializing';
+  String get tagSocializingName => 'التواصل الاجتماعي';
 
   @override
-  String get tagHobbyName => 'Hobby';
+  String get tagHobbyName => 'هواية';
 
   @override
-  String get tagEntertainmentName => 'Entertainment';
+  String get tagEntertainmentName => 'الترفيه';
 
   @override
-  String get tagDiningName => 'Dining';
+  String get tagDiningName => 'تناول الطعام';
 
   @override
-  String get tagChoresName => 'Chores';
+  String get tagChoresName => 'الأعمال اليومية';
 
   @override
   String get tagCategoryEmotionsName => 'Emotions';

@@ -30,10 +30,10 @@ class AppLocalizationsRo extends AppLocalizations {
   String get pageHomeTitle => 'Acasă';
 
   @override
-  String get jumpToMonthTitle => 'Jump to month';
+  String get jumpToMonthTitle => 'Sari la lună';
 
   @override
-  String get jumpToLogTitle => 'Jump to log';
+  String get jumpToLogTitle => 'Sari la înregistrare';
 
   @override
   String get flashbacksTitle => 'Amintiri';
@@ -129,7 +129,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get noLogs => 'Nicio Înregistrare…';
 
   @override
-  String get noResults => 'No Results…';
+  String get noResults => 'Nu sunt rezultate…';
 
   @override
   String get sortDateTitle => 'Data';
@@ -174,22 +174,22 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
-  String get chartGroupingLabel => 'Group by';
+  String get chartGroupingLabel => 'Grupează după';
 
   @override
-  String get chartGroupingDay => 'Day';
+  String get chartGroupingDay => 'Zi';
 
   @override
-  String get chartGroupingWeek => 'Week';
+  String get chartGroupingWeek => 'Săptămână';
 
   @override
-  String get chartGroupingMonth => 'Month';
+  String get chartGroupingMonth => 'Lună';
 
   @override
-  String get chartGroupingYear => 'Year';
+  String get chartGroupingYear => 'An';
 
   @override
-  String get chartSmoothingLabel => 'Smoothing';
+  String get chartSmoothingLabel => 'Netezire';
 
   @override
   String streakCurrent(num count) {
@@ -250,10 +250,10 @@ class AppLocalizationsRo extends AppLocalizations {
       'Your entries are safe but couldn\'t be moved to the app\'s storage.\n\nTry again, and report the issue if it keeps happening.';
 
   @override
-  String get databaseMigrationErrorRetry => 'Retry';
+  String get databaseMigrationErrorRetry => 'Reîncearcă';
 
   @override
-  String get errorReport => 'Report Issue';
+  String get errorReport => 'Raportează o Problemă';
 
   @override
   String get lastModified => 'Modificat';
