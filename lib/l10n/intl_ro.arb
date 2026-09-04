@@ -81,5 +81,16 @@
     "templateDefaultTimestampBody": "{date} - {time}:",
     "templateDefaultSummaryTitle": "Rezumatul Zilei",
     "templateDefaultSummaryBody": "### Rezumat\n- \n\n### Citat\n> ",
-    "templateDefaultReflectionTitle": "Reflecție"
+    "templateDefaultReflectionTitle": "Reflecție",
+    "jumpToMonthTitle": "Sari la lună",
+    "jumpToLogTitle": "Sari la înregistrare",
+    "noResults": "Nu sunt rezultate…",
+    "chartGroupingLabel": "Grupează după",
+    "chartGroupingDay": "Zi",
+    "chartGroupingWeek": "Săptămână",
+    "chartGroupingMonth": "Lună",
+    "chartGroupingYear": "An",
+    "chartSmoothingLabel": "Netezire",
+    "databaseMigrationErrorRetry": "Reîncearcă",
+    "errorReport": "Raportează o Problemă"
 }
